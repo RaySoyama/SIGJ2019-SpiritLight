@@ -302,6 +302,16 @@ PrefabInstance:
       propertyPath: bobbingAmount
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3667926958060144661, guid: bd4dfa586dbb7f34c84b698d78425606,
+        type: 3}
+      propertyPath: bobbingSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667926958060144661, guid: bd4dfa586dbb7f34c84b698d78425606,
+        type: 3}
+      propertyPath: bobbingAmount
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
 --- !u!1 &316743385 stripped
@@ -848,6 +858,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 888874050, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
+      propertyPath: m_Priority
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
