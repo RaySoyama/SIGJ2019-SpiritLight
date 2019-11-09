@@ -20,7 +20,6 @@ public class HeadBob : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log(CameraTransform.parent.name);
 		float waveslice = 0.0f; 
 		float horizontal = Input.GetAxis("Horizontal"); 
 		float vertical = Input.GetAxis("Vertical"); 
