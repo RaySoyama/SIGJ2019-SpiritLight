@@ -16,10 +16,19 @@ public class WorldMachine : MonoBehaviour
         End
     }
 
+    public enum PlayerWalkingSurface
+    { 
+        Wood,
+        Grass,
+        Rock
+    }
+
+
     public GameObject realityPlayer;
     public GameObject realmPlayer;
 
     public GAMESTATE CurrentGameState;
+    public PlayerWalkingSurface CurrentWalkingSurface;
 
     [SerializeField]
     private bool isInRealm;
