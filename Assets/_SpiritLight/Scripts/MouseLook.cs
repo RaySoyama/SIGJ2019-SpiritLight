@@ -2,34 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
-{
-    public float XSensitivity = 2f;
-	public float YSensitivity = 2f;
-	public bool clampVerticalRotation = true;
-	public float MinimumX = -90F;
-	public float MaximumX = 90F;
-	public bool smooth;
-	public float smoothTime = 5f;
+public class MouseLook : MonoBehaviour {
+    [SerializeField] float XSensitivity = 2f;
+	[SerializeField] float YSensitivity = 2f;
+	[SerializeField] bool clampVerticalRotation = true;
+	[SerializeField] float MinimumX = -90F;
+	[SerializeField] float MaximumX = 90F;
+	[SerializeField] bool smooth;
+	[SerializeField] float smoothTime = 5f;
 
-    public bool useWorldMachine = true;
+    [SerializeField] bool useWorldMachine = true;
+
     Quaternion m_CharacterTargetRot;
 	Quaternion m_CameraTargetRot;
 	Transform character;
-	Transform cameraTransform;
+	public Transform cameraTransform {
+		get {
+			if (useWorldMachine) {
+				return WorldMachine.World.CurrentCameraTransform;
+			}
+			else {
+				return Camera.main.transform;
+			}
+		}
+	}
 
     void Awake() {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         character = gameObject.transform;
-
-        // get a reference to the main camera's transform
-        if (useWorldMachine) {
-			cameraTransform = WorldMachine.World.CurrentCameraTransform;
-        }
-        else {
-            cameraTransform = Camera.main.transform;
-        }
 
 		// get the location rotation of the character and the camera
 		m_CharacterTargetRot = character.localRotation;
@@ -37,12 +38,7 @@ public class MouseLook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-		if (useWorldMachine) {
-			cameraTransform = WorldMachine.World.CurrentCameraTransform;
-		}
-
+    void Update(){
         //get the y and x rotation based on the Input manager
 		float yRot = Input.GetAxis("Mouse X") * XSensitivity;
 		float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
@@ -56,15 +52,13 @@ public class MouseLook : MonoBehaviour
 			m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);
 
 		// update the character and camera based on calculations
-		if(smooth) // if smooth, then slerp over time
-		{
+		if(smooth) {
 			character.localRotation = Quaternion.Slerp (character.localRotation, m_CharacterTargetRot,
 			                                            smoothTime * Time.deltaTime);
 			cameraTransform.localRotation = Quaternion.Slerp (cameraTransform.localRotation, m_CameraTargetRot,
 			                                         smoothTime * Time.deltaTime);
 		}
-		else // not smooth, so just jump
-		{
+		else {
 			character.localRotation = m_CharacterTargetRot;
 			cameraTransform.localRotation = m_CameraTargetRot;
 		}
