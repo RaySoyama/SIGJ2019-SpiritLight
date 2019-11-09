@@ -9,14 +9,18 @@ public class HeadBob : MonoBehaviour {
 	float midpoint;
 	[SerializeField] float bobTimer = 0.0f;
 
-    MouseLook mouseLook;
+    Transform CameraTransform {
+        get {
+            return WorldMachine.World.CurrentCameraTransform;
+        }
+    }
 
     void Awake() {
-       mouseLook = GetComponent<MouseLook>();
-       midpoint = mouseLook.cameraTransform.localPosition.y;
+        midpoint = CameraTransform.localPosition.y;
     }
 
     void Update() {
+        Debug.Log(CameraTransform.parent.name);
 		float waveslice = 0.0f; 
 		float horizontal = Input.GetAxis("Horizontal"); 
 		float vertical = Input.GetAxis("Vertical"); 
@@ -39,15 +43,15 @@ public class HeadBob : MonoBehaviour {
 			float totalAxes = Mathf.Abs(horizontal) + Mathf.Abs(vertical); 
 			totalAxes = Mathf.Clamp (totalAxes, 0.0f, 1.0f); 
 			translateChange = totalAxes * translateChange; 
-			mouseLook.cameraTransform.localPosition = new Vector3(mouseLook.cameraTransform.localPosition.x, 
+			CameraTransform.localPosition = new Vector3(CameraTransform.localPosition.x, 
 														midpoint + translateChange, 
-														mouseLook.cameraTransform.localPosition.z);
+														CameraTransform.localPosition.z);
 		} 
 		
         else { 
-			mouseLook.cameraTransform.localPosition = new Vector3(mouseLook.cameraTransform.localPosition.x,
+			CameraTransform.localPosition = new Vector3(CameraTransform.localPosition.x,
 														midpoint,
-														mouseLook.cameraTransform.localPosition.z);
+														CameraTransform.localPosition.z);
 		} 
     }
 }

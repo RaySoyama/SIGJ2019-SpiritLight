@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 8430213388604832378}
   - component: {fileID: 8430213388604832377}
   - component: {fileID: 2636547396191893587}
+  - component: {fileID: 6187471717945158162}
   m_Layer: 0
   m_Name: RealityCharacter
   m_TagString: Untagged
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c59896adc5216942bf84acc71219e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!143 &8430213388604832378
 CharacterController:
   m_ObjectHideFlags: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   smooth: 0
   smoothTime: 5
   useWorldMachine: 1
+  cameraTransform: {fileID: 888874051}
 --- !u!82 &2636547396191893587
 AudioSource:
   m_ObjectHideFlags: 0
@@ -295,6 +297,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6187471717945158162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430213388604832381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522e48f591d5bca44a1acd17ca02a9bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.18
+  bobbingAmount: 0.2
+  bobTimer: 0
 --- !u!1001 &8430213388434050249
 PrefabInstance:
   m_ObjectHideFlags: 0

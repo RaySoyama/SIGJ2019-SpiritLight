@@ -16,16 +16,7 @@ public class MouseLook : MonoBehaviour {
     Quaternion m_CharacterTargetRot;
 	Quaternion m_CameraTargetRot;
 	Transform character;
-	public Transform cameraTransform {
-		get {
-			if (useWorldMachine) {
-				return WorldMachine.World.CurrentCameraTransform;
-			}
-			else {
-				return Camera.main.transform;
-			}
-		}
-	}
+	[SerializeField] Transform cameraTransform;
 
     void Awake() {
         Cursor.visible = false;
