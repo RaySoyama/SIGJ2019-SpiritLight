@@ -66,6 +66,17 @@ public class WorldMachine : MonoBehaviour
         }
     }
 
+    public Transform CurrentCameraTransform {
+        get {
+            if (isInRealm) {
+                return RealmCam.transform;
+            }
+            else {
+                return RealityCam.transform;
+            }
+        }
+    }
+
     void Awake()
     {
         if (World == null)

@@ -12,6 +12,7 @@ public class MouseLook : MonoBehaviour
 	public bool smooth;
 	public float smoothTime = 5f;
 
+    public bool useWorldMachine = true;
     Quaternion m_CharacterTargetRot;
 	Quaternion m_CameraTargetRot;
 	Transform character;
@@ -23,8 +24,12 @@ public class MouseLook : MonoBehaviour
         character = gameObject.transform;
 
         // get a reference to the main camera's transform
-        WorldMachine test = WorldMachine.World;
-		cameraTransform = WorldMachine.World.MainCamera.transform;
+        if (useWorldMachine) {
+			cameraTransform = WorldMachine.World.CurrentCameraTransform;
+        }
+        else {
+            cameraTransform = Camera.main.transform;
+        }
 
 		// get the location rotation of the character and the camera
 		m_CharacterTargetRot = character.localRotation;
@@ -34,6 +39,10 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (useWorldMachine) {
+			cameraTransform = WorldMachine.World.CurrentCameraTransform;
+		}
+
         //get the y and x rotation based on the Input manager
 		float yRot = Input.GetAxis("Mouse X") * XSensitivity;
 		float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
