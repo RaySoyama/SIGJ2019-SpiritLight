@@ -285,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 8430213388604832376, guid: bd4dfa586dbb7f34c84b698d78425606,
         type: 3}
       propertyPath: speed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8430213388604832377, guid: bd4dfa586dbb7f34c84b698d78425606,
         type: 3}
@@ -322,21 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &316743387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316743385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522e48f591d5bca44a1acd17ca02a9bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobbingSpeed: 0.05
-  bobbingAmount: 0.2
-  bobTimer: 0
 --- !u!1 &472865207
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,11 +848,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430213388604832376, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: speed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}

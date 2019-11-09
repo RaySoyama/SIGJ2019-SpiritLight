@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8430213388604832376}
   - component: {fileID: 8430213388604832378}
   - component: {fileID: 8430213388604832377}
+  - component: {fileID: 1339772165}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c59896adc5216942bf84acc71219e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!143 &8430213388604832378
 CharacterController:
   m_ObjectHideFlags: 0
@@ -197,6 +198,22 @@ MonoBehaviour:
   MaximumX: 90
   smooth: 0
   smoothTime: 5
+  useWorldMachine: 1
+--- !u!114 &1339772165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430213388604832381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522e48f591d5bca44a1acd17ca02a9bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.05
+  bobbingAmount: 0.15
+  bobTimer: 0
 --- !u!1001 &8430213388434050249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,11 +221,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430213388604832379}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
-        type: 3}
-      propertyPath: m_Name
-      value: xbot
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -263,6 +275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
+        type: 3}
+      propertyPath: m_Name
+      value: xbot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfaf6cfc0cffa7a4298ca66bf1029324, type: 3}
