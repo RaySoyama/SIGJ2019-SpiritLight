@@ -9,6 +9,8 @@ public class HeadBob : MonoBehaviour {
 	float midpoint;
 	[SerializeField] float bobTimer = 0.0f;
 
+    bool footstepIsPlaying = false;
+
     Transform CameraTransform {
         get {
             return WorldMachine.World.CurrentCameraTransform;
@@ -29,12 +31,19 @@ public class HeadBob : MonoBehaviour {
 		} 
 		
         else { 
+            float oldWaveslice = waveslice;
 			waveslice = Mathf.Sin(bobTimer); 
 			bobTimer = bobTimer + bobbingSpeed;
+
+            if (oldWaveslice <= 0 && waveslice >= 0) {
+                footstepIsPlaying = false;
+            }
+
             // Debug.Log("waveslice: " + waveslice.ToString("F20"));
-            if (waveslice <= -0.99f) {
+            if (!footstepIsPlaying && waveslice <= -0.99f) {
                 AudioManager.Audio.PlayFootstep();
                 Debug.Log("Footstep!");
+                footstepIsPlaying = true;
             }
 
 			if (bobTimer > Mathf.PI * 2) { 
