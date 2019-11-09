@@ -122,12 +122,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8430213388604832379}
   - component: {fileID: 8430213388604832376}
-  - component: {fileID: 3667926958060144661}
   - component: {fileID: 8430213388604832378}
   - component: {fileID: 8430213388604832377}
   - component: {fileID: 2636547396191893587}
   m_Layer: 0
-  m_Name: Character
+  m_Name: RealityCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,21 +161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
---- !u!114 &3667926958060144661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8430213388604832381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522e48f591d5bca44a1acd17ca02a9bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobbingSpeed: 0.15
-  bobbingAmount: 0.15
-  bobTimer: 0
 --- !u!143 &8430213388604832378
 CharacterController:
   m_ObjectHideFlags: 0
