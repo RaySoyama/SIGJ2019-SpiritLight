@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
         Vector3 movementX = Input.GetAxis("Horizontal") * Vector3.right;
         Vector3 movementZ = Input.GetAxis("Vertical") * Vector3.forward;
 
-        Vector3 movementXZ = movementX + movementZ;
+        Vector3 movementXZ = transform.TransformDirection(movementX + movementZ);
 
         if (movementXZ.magnitude > 1) {
             movementXZ.Normalize();
