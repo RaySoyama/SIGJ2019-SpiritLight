@@ -22,8 +22,9 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         character = gameObject.transform;
 
-		// get a reference to the main camera's transform
-		cameraTransform = Camera.main.transform;
+        // get a reference to the main camera's transform
+        WorldMachine test = WorldMachine.World;
+		cameraTransform = WorldMachine.World.MainCamera.transform;
 
 		// get the location rotation of the character and the camera
 		m_CharacterTargetRot = character.localRotation;

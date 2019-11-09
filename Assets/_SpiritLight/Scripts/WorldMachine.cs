@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class WorldMachine : MonoBehaviour
 {
     public static WorldMachine World;
@@ -16,7 +16,8 @@ public class WorldMachine : MonoBehaviour
         End
     }
 
-    public GameObject player;
+    public GameObject realityPlayer;
+    public GameObject realmPlayer;
 
     public GAMESTATE CurrentGameState;
 
@@ -30,65 +31,103 @@ public class WorldMachine : MonoBehaviour
         }
     }
 
-    public Vector3 huskLocation;
-
-
-
     [SerializeField]
     private Vector3 realmOffset;
 
+    [SerializeField] [ReadOnlyField]
+    private Vector3 huskLocation;
+
+    [SerializeField]
+    private GameObject husk;
 
 
-    void Start()
+    [SerializeField]
+    private CinemachineVirtualCamera RealityCam;
+
+    [SerializeField]
+    private CinemachineVirtualCamera RealmCam;
+
+    [SerializeField]
+    private Camera mainCamera;
+    public Camera MainCamera
+    {
+        get
+        {
+            return mainCamera;
+        }
+    }
+
+    void Awake()
     {
         if (World == null)
         {
             World = this;
         }
-        else
-        {
-            return;
-        }
-
-
-
+        
     }
 
-    void Update()
+    void LateUpdate()
     {
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            EnterRealm();
+            OnEnterRealm();
         }
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            ExitRealm();
+            OnExitRealm();
         }
 
+        realmPlayer.transform.position = realityPlayer.transform.position + realmOffset;
     }
 
-    public void EnterRealm()
+    public void OnEnterRealm()
     {
         isInRealm = true;
-        player.transform.position += realmOffset;
-        huskLocation = player.transform.position;
+        RealmCam.Priority = 20;
+        RealityCam.Priority = 10;
+
+        huskLocation = realmPlayer.transform.position;
+        husk.transform.position = huskLocation;
     }
 
-    public void ExitRealm()
+    public void OnExitRealm()
     {
-        isInRealm = false;
-        player.transform.position -= realmOffset;
-
-
-
+        StartCoroutine(ExitRealm());
     }
     public void OnEnter()
     { 
 
     }
 
+    private IEnumerator ExitRealm()
+    {
+        isInRealm = false;
+        RealmCam.Priority = 10;
+        RealityCam.Priority = 20;
 
+        float time = 0;
+        Vector3 StartPos = realityPlayer.transform.position;
+
+        while (time < 1.0f)
+        {
+            realityPlayer.transform.position = Vector3.Lerp(StartPos, huskLocation - realmOffset,time);
+
+
+            //if (time > 0.8)
+            //{
+            //    RealityCam.m_Lens.FieldOfView = Mathf.Lerp(40, 80, time * 1.25f);
+            //}
+            //else
+            //{
+            //    RealityCam.m_Lens.FieldOfView = Mathf.Lerp(40, 80, time * 1.25f);
+            //}
+            time += Time.deltaTime * 2;
+            yield return new WaitForEndOfFrame();
+        }
+
+        RealityCam.m_Lens.FieldOfView = 40;
+    }
 
 }
