@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Foot Steps")]
     [SerializeField]
-    private AudioSource FootStepAudioSource;
+    private List<AudioSource> FootStepAudioSource;
 
     [SerializeField]
     private List<AudioClip> FootstepWoodClips;
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     [Header("SFX")]
 
     [SerializeField]
-    private AudioSource PlayerSFXAudioSource;
+    private List<AudioSource> PlayerSFXAudioSource;
 
     [SerializeField]
     private List<AudioClip> PlayerSFXClips;
@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
     [Header("Realm SFX")]
 
     [SerializeField]
-    private AudioSource RealmAudioSource;
+    private List<AudioSource> RealmAudioSource;
 
     [SerializeField]
     private List<AudioClip> RealmEnterExitClips;
@@ -75,8 +75,11 @@ public class AudioManager : MonoBehaviour
 
                 PreviousFootstep = idx;
 
-                FootStepAudioSource.clip = FootstepWoodClips[idx];
-                FootStepAudioSource.Play();
+                foreach (AudioSource audio in FootStepAudioSource)
+                { 
+                     audio.clip = FootstepWoodClips[idx];
+                     audio.Play();
+                }
 
                 break;
 
@@ -94,9 +97,11 @@ public class AudioManager : MonoBehaviour
 
                 PreviousFootstep = idx;
 
-                FootStepAudioSource.clip = FootstepGrassClips[idx];
-                FootStepAudioSource.Play();
-
+                foreach (AudioSource audio in FootStepAudioSource)
+                {
+                    audio.clip = FootstepGrassClips[idx];
+                    audio.Play();
+                }
                 break;
             case WorldMachine.PlayerWalkingSurface.Rock:
 
@@ -112,9 +117,11 @@ public class AudioManager : MonoBehaviour
 
                 PreviousFootstep = idx;
 
-                FootStepAudioSource.clip = FootstepRockClips[idx];
-                FootStepAudioSource.Play();
-
+                foreach (AudioSource audio in FootStepAudioSource)
+                {
+                    audio.clip = FootstepRockClips[idx];
+                    audio.Play();
+                }
                 break;
         }
     }
@@ -124,14 +131,15 @@ public class AudioManager : MonoBehaviour
 
     public void PlayRealEnter()
     {
-        RealmAudioSource.clip = RealmEnterExitClips[0];
-        RealmAudioSource.Play();
+        //RealmAudioSource.clip = RealmEnterExitClips[0];
+        //RealmAudioSource.Play();
     }
 
     public void PlayRealmExit()
     {
-        RealmAudioSource.clip = RealmEnterExitClips[1];
-        RealmAudioSource.Play();
+
+        //RealmAudioSource.clip = RealmEnterExitClips[1];
+        //RealmAudioSource.Play();
     }
 }
 
