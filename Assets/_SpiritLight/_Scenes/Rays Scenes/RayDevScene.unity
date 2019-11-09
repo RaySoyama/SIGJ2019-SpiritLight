@@ -9923,6 +9923,7 @@ MonoBehaviour:
   player: {fileID: 1514190769}
   CurrentGameState: 0
   isInRealm: 0
+  huskLocation: {x: 0, y: 0, z: 0}
   realmOffset: {x: 0, y: 50, z: 0}
 --- !u!1001 &1745468453
 PrefabInstance:

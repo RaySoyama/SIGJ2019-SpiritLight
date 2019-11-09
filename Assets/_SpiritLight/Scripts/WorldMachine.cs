@@ -30,6 +30,10 @@ public class WorldMachine : MonoBehaviour
         }
     }
 
+    public Vector3 huskLocation;
+
+
+
     [SerializeField]
     private Vector3 realmOffset;
 
@@ -69,13 +73,15 @@ public class WorldMachine : MonoBehaviour
     {
         isInRealm = true;
         player.transform.position += realmOffset;
-
+        huskLocation = player.transform.position;
     }
 
     public void ExitRealm()
     {
         isInRealm = false;
         player.transform.position -= realmOffset;
+
+
 
     }
     public void OnEnter()
