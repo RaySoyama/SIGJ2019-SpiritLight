@@ -1,8 +1,9 @@
-﻿Shader "Unlit/ParallaxShader"
+﻿Shader "Rays Custom/ParallaxShader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+		_Offset ("Offset Range UV Space", Float) = 1
     }
     SubShader
     {
@@ -37,6 +38,8 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+			float _Offset;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -51,9 +54,12 @@
             {
 				float3 viewDir = UNITY_MATRIX_IT_MV[2].xyz;
 				//float3 forward = mul((float3x3)unity_CameraToWorld, float3(0, 0, 1));
-
+				float3 normal = normalize(i.worldNormal);
+				//float NdotL = dot(viewDir, normal);
+				float xDot = dot(viewDir.xy, normal.xy) * _Offset;
+				float yDot = dot(viewDir.xy,normal.yz) * _Offset;
 				
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, float2(i.uv.x + yDot, -i.uv.y + xDot));
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
             }
