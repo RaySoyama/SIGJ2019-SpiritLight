@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c59896adc5216942bf84acc71219e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!143 &8430213388604832378
 CharacterController:
   m_ObjectHideFlags: 0
@@ -302,11 +302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430213388604832379}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
-        type: 3}
-      propertyPath: m_Name
-      value: xbot
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,6 +356,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
+        type: 3}
+      propertyPath: m_Name
+      value: xbot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfaf6cfc0cffa7a4298ca66bf1029324, type: 3}
