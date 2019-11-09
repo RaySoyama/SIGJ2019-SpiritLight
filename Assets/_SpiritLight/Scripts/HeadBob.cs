@@ -31,6 +31,11 @@ public class HeadBob : MonoBehaviour {
         else { 
 			waveslice = Mathf.Sin(bobTimer); 
 			bobTimer = bobTimer + bobbingSpeed;
+            // Debug.Log("waveslice: " + waveslice.ToString("F20"));
+            if (waveslice <= -0.99f) {
+                AudioManager.Audio.PlayFootstep();
+                Debug.Log("Footstep!");
+            }
 
 			if (bobTimer > Mathf.PI * 2) { 
 				bobTimer = bobTimer - (Mathf.PI * 2); 
