@@ -44,6 +44,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayFootstep();
+        }
+           
+
+    }
+
 
     public void PlayFootstep()
     {
@@ -53,7 +63,7 @@ public class AudioManager : MonoBehaviour
         {
             case WorldMachine.PlayerWalkingSurface.Wood:
 
-                while (idx == PreviousFootstep)
+                while (idx == PreviousFootstep || idx == -1)
                 {
                     idx = Random.Range(0, FootstepWoodClips.Count - 1);
 
@@ -72,7 +82,7 @@ public class AudioManager : MonoBehaviour
 
             case WorldMachine.PlayerWalkingSurface.Grass:
 
-                while (idx == PreviousFootstep)
+                while (idx == PreviousFootstep || idx == -1)
                 {
                     idx = Random.Range(0, FootstepGrassClips.Count - 1);
 
@@ -90,7 +100,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case WorldMachine.PlayerWalkingSurface.Rock:
 
-                while (idx == PreviousFootstep)
+                while (idx == PreviousFootstep || idx == -1)
                 {
                     idx = Random.Range(0, FootstepRockClips.Count - 1);
 
