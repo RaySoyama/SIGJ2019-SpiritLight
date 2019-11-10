@@ -13,13 +13,19 @@ public class CandleDetection : MonoBehaviour {
         candleMask = LayerMask.GetMask("Candle");
     }
     void Update() {
-        RaycastHit hit;
-        bool didHit = Physics.Raycast(transform.position, transform.forward, out hit, candleHitRange, candleMask);
-        if (drawRaycast) {
-            Debug.DrawRay(transform.position, transform.forward * candleHitRange, Color.green);
-        }
-        if (didHit) {
-            Debug.Log(hit.transform.name);
+        if (Input.GetMouseButtonDown(0)) {
+            RaycastHit hit;
+            bool didHit = Physics.Raycast(transform.position, transform.forward, out hit, candleHitRange, candleMask);
+            if (drawRaycast) {
+                Debug.DrawRay(transform.position, transform.forward * candleHitRange, Color.green);
+            }
+            if (didHit) {
+                Candle candle = hit.collider.GetComponent<Candle>();
+
+                if (candle != null) {
+                    candle.Extinguish();
+                }
+            }
         }
         
     }
