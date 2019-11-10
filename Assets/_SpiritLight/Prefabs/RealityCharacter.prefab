@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 6187471717945158162}
   - component: {fileID: 706411683}
   - component: {fileID: 706411678}
+  - component: {fileID: 7233259054907240305}
   m_Layer: 0
   m_Name: RealityCharacter
   m_TagString: RealityCharacter
@@ -475,6 +476,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &7233259054907240305
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430213388604832381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &8430213388434050249
 PrefabInstance:
   m_ObjectHideFlags: 0

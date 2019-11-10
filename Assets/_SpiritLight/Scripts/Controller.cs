@@ -31,4 +31,12 @@ public class Controller : MonoBehaviour
         
         controller.Move(movement * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EventTrigger"))
+        {
+            WorldMachine.World.OnEventTriggerEnter(other.gameObject);
+        }
+    }
 }

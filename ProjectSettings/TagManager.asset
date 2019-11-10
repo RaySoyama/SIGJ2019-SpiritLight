@@ -7,6 +7,7 @@ TagManager:
   - Candle
   - RealityCharacter
   - RealmCharacter
+  - EventTrigger
   layers:
   - Default
   - TransparentFX

@@ -82,6 +82,18 @@ public class WorldMachine : MonoBehaviour
         }
     }
 
+
+    [Header("Triggers")]
+    public GameObject triggerOne;
+    public bool triggerOneTriggered = false;
+    public Animator triggerOneAnim;
+
+    [Space(10)]
+
+    public GameObject triggerTwo;
+    public bool triggerTwoTriggered = false;
+    public AudioSource triggerTwoAS;
+
     void Awake()
     {
         if (World == null)
@@ -157,6 +169,31 @@ public class WorldMachine : MonoBehaviour
         }
 
         RealityCam.m_Lens.FieldOfView = 40;
+    }
+
+
+
+    public void OnEventTriggerEnter(GameObject trigger)
+    {
+        if (trigger == triggerOne && triggerOneTriggered == false)
+        {
+            triggerOneTriggered = true;
+            //Do Spooky shit
+            Debug.Log("Spook 1");
+            triggerOneAnim.SetTrigger("spook");
+
+        }
+
+        if (trigger == triggerTwo && triggerTwoTriggered == false)
+        {
+            triggerTwoTriggered = true;
+            //Do Spooky shit
+            Debug.Log("Spook 2");
+            triggerTwoAS.Play();
+        }
+
+
+
     }
 
 }
