@@ -9642,11 +9642,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RealityCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 8430213388604832381, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: m_TagString
-      value: RealityCharacter
-      objectReference: {fileID: 0}
     - target: {fileID: 8430213388604832379, guid: bd4dfa586dbb7f34c84b698d78425606,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9701,30 +9696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430213388604832376, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430213388604832377, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: smooth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 888874049, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
-      propertyPath: m_TagString
-      value: RealityCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 567400223250699712, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: m_TagString
-      value: RealityCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187471717945158162, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: bobbingSpeed
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
@@ -11993,7 +11964,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1409588811}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952969818}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -12897,26 +12868,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1932886499}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1952969818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 888874049, guid: bd4dfa586dbb7f34c84b698d78425606,
-    type: 3}
-  m_PrefabInstance: {fileID: 1409588811}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1952969819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952969818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265aea5cff9844c4cbedb712771e504b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  candleHitRange: 2
-  drawRaycast: 1
 --- !u!1 &1953329279
 GameObject:
   m_ObjectHideFlags: 0
