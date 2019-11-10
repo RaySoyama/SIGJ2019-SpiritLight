@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8430213388604832376, guid: bd4dfa586dbb7f34c84b698d78425606,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 888874049, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
       propertyPath: m_TagString
       value: RealmCharacter
@@ -85,11 +90,7 @@ PrefabInstance:
       propertyPath: m_Priority
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 8430213388604832376, guid: bd4dfa586dbb7f34c84b698d78425606,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 706411680, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
+    - {fileID: 6187471717945158162, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
