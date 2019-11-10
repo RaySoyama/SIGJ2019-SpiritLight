@@ -32,7 +32,7 @@ public class HeadBob : MonoBehaviour {
 		
         else {
 			waveslice = Mathf.Sin(bobTimer); 
-			bobTimer = bobTimer + bobbingSpeed;
+			bobTimer = bobTimer + bobbingSpeed * Time.deltaTime / 0.02f;
 
             if (waveslice >= 0) {
                 footstepIsPlaying = false;
