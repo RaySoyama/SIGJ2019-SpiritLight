@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Candle : MonoBehaviour
 {
-    [SerializeField] bool isLit = true;
+    [SerializeField] public bool isLit = true;
 
     public int id;
     public GameObject flame;

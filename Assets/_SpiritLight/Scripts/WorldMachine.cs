@@ -193,6 +193,7 @@ public class WorldMachine : MonoBehaviour
             Debug.Log("Spook 1");
             triggerOneAnim.SetTrigger("spook");
             AudioManager.Audio.CricketAmbient.Pause();
+            StartCoroutine(CicadaPause());
 
         }
         else if (trigger == triggerTwo && triggerTwoTriggered == false)
@@ -249,6 +250,10 @@ public class WorldMachine : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    private IEnumerator CicadaPause()
+    {
+        yield return new WaitForSeconds(2);
+        AudioManager.Audio.CricketAmbient.Play();
+    }
 
 }

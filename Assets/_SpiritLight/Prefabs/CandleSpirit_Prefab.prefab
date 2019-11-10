@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295741208210499191}
-  m_Layer: 0
+  - component: {fileID: 3116046241822217422}
+  - component: {fileID: 8271154602671760883}
+  m_Layer: 8
   m_Name: CandleSpirit_Prefab
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +34,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3116046241822217422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259443349675398531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d4314324f79a54ab25583a4e0ea75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLit: 1
+  id: 0
+  flame: {fileID: 3291969243203864398}
+--- !u!136 &8271154602671760883
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259443349675398531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.28
+  m_Height: 1.31
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.14, z: 0}
 --- !u!1 &1654378951491577532
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120465987014716490}
   - component: {fileID: 5216127536036039661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +165,7 @@ GameObject:
   - component: {fileID: 1332258723035195961}
   - component: {fileID: 8009129123419164687}
   - component: {fileID: 4330965219274222838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Candle_GeoSpirit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +242,7 @@ GameObject:
   - component: {fileID: 3291969242022611042}
   - component: {fileID: 3291969242022611044}
   - component: {fileID: 3291969242022611045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CandleFlame_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +5004,7 @@ GameObject:
   - component: {fileID: 3291969242605213256}
   - component: {fileID: 3291969242605213258}
   - component: {fileID: 3291969242605213259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CandleFlame_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9734,7 +9765,7 @@ GameObject:
   - component: {fileID: 3291969243203864435}
   - component: {fileID: 3291969243203864432}
   - component: {fileID: 3291969243203864433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_MainWorldCandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14489,7 +14520,7 @@ GameObject:
   - component: {fileID: 3291969243386615606}
   - component: {fileID: 3291969243386615608}
   - component: {fileID: 3291969243386615609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CandleFlame_Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

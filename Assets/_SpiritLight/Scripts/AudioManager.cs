@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> PlayerSFXClips;
 
+    [Space(10)]
 
     public AudioSource CricketAmbient;
 
