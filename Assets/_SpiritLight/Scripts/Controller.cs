@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    public bool canMove = true;
+    [SerializeField] bool canMove = true;
     CharacterController controller;
 
     Vector3 movement = Vector3.zero;
@@ -52,6 +52,22 @@ public class Controller : MonoBehaviour
         }
         else if (transform.tag == "RealityCharacter" && other.CompareTag("Tar")) {
             WorldMachine.World.OnTarTrigger(other.gameObject);
+        }
+    }
+
+    public void StopMovement() {
+        canMove = false;
+        HeadBob bob = GetComponent<HeadBob>();
+        if (bob) {
+            bob.enabled = false;
+        }
+    }
+
+    public void StartMovement() {
+        canMove = true;
+        HeadBob bob = GetComponent<HeadBob>();
+        if (bob) {
+            bob.enabled = true;
         }
     }
 }

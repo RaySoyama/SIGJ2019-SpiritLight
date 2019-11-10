@@ -213,11 +213,7 @@ public class WorldMachine : MonoBehaviour
         HeadBob headBob = realityPlayer.GetComponent<HeadBob>();
 
         if (controller) {
-            controller.canMove = false;
-        }
-
-        if (headBob) {
-            headBob.enabled = false;
+            controller.StopMovement();
         }
 
         StartCoroutine(Die());
