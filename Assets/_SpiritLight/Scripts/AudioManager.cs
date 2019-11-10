@@ -34,10 +34,6 @@ public class AudioManager : MonoBehaviour
 
     [Space(10)]
 
-    public AudioSource CricketAmbient;
-
-    public AudioSource RealmAmbient;
-
     [Header("Realm SFX")]
 
     [SerializeField]
@@ -46,6 +42,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> RealmEnterExitClips;
 
+
+    [Header("Ambient")]
+
+    public AudioSource CicadaAmbient;
+
+    public AudioSource RealityAmbient;
+
+    public AudioSource RealmAmbient;
 
 
 

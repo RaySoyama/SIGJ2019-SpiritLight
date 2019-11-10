@@ -25,8 +25,8 @@ public class CandleManager : MonoBehaviour
         {
             if (TarCandles[i].id == thingy.id)
             {
-                thingy.isLit = false;
-                thingy.flame.SetActive(false);
+                TarCandles[i].isLit = false;
+                TarCandles[i].flame.SetActive(false);
                 TarCandles.Remove(TarCandles[i]);
                 i--;
             }
