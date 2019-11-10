@@ -40,12 +40,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> RealmEnterExitClips;
 
+
+    private BreathManager breath;
+
     void Awake()
     {
         if (Audio == null)
         {
             Audio = this;
         }
+
+        breath = GetComponent<BreathManager>();  
     }
 
     void Update()
@@ -145,21 +150,32 @@ public class AudioManager : MonoBehaviour
     {
         foreach (AudioSource audio in RealmAudioSource)
         {
-
-//RealmAudioSource.clip = RealmEnterExitClips[0];
-            //RealmAudioSource.Play();
+            audio.clip = RealmEnterExitClips[0];
+            audio.Play();
         }
 
     }
 
 
-
-
     public void PlayRealmExit()
     {
+        if (breath.BreathMeter / breath.BreathLimit > breath.GaspingThreshold)
+        {
+            foreach (AudioSource audio in RealmAudioSource)
+            {
+                audio.clip = RealmEnterExitClips[1];
+                audio.Play();
+            }
+        }
+        else
+        {
+            foreach (AudioSource audio in RealmAudioSource)
+            {
+                audio.clip = RealmEnterExitClips[2];
+                audio.Play();
+            }
 
-        //RealmAudioSource.clip = RealmEnterExitClips[1];
-        //RealmAudioSource.Play();
+        }
     }
 }
 

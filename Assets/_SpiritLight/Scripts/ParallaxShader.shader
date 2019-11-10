@@ -53,13 +53,18 @@
             fixed4 frag (v2f i) : SV_Target
             {
 				float3 viewDir = UNITY_MATRIX_IT_MV[2].xyz;
-				//float3 forward = mul((float3x3)unity_CameraToWorld, float3(0, 0, 1));
+
 				float3 normal = normalize(i.worldNormal);
-				//float NdotL = dot(viewDir, normal);
-				float xDot = dot(viewDir.xy, normal.xy) * _Offset;
-				float yDot = dot(viewDir.xy,normal.yz) * _Offset;
 				
-                fixed4 col = tex2D(_MainTex, float2(i.uv.x + yDot, -i.uv.y + xDot));
+				//floor
+				//float xDot = dot(viewDir.xy, normal.xy) * _Offset;
+				//float yDot = dot(viewDir.xy,normal.yz) * _Offset;
+				
+				//wall
+				float xDot = dot(viewDir.yz	, normal.xz) * _Offset;
+				float yDot = dot(viewDir.yz	, normal.zx) * _Offset;
+
+                fixed4 col = tex2D(_MainTex, float2(i.uv.x + yDot, i.uv.y + xDot));
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
             }

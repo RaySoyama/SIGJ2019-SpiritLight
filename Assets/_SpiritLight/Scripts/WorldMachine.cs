@@ -131,20 +131,12 @@ public class WorldMachine : MonoBehaviour
 
         float time = 0;
         Vector3 StartPos = realityPlayer.transform.position;
+        AudioManager.Audio.PlayRealmExit();
 
-        while (time < 1.0f)
+        while (time < 1.0f * 1.563f)
         {
-            realityPlayer.transform.position = Vector3.Lerp(StartPos, huskLocation - realmOffset,time);
+            realityPlayer.transform.position = Vector3.Lerp(StartPos, huskLocation - realmOffset, time / 1.563f);
 
-
-            //if (time > 0.8)
-            //{
-            //    RealityCam.m_Lens.FieldOfView = Mathf.Lerp(40, 80, time * 1.25f);
-            //}
-            //else
-            //{
-            //    RealityCam.m_Lens.FieldOfView = Mathf.Lerp(40, 80, time * 1.25f);
-            //}
             time += Time.deltaTime * 2;
             yield return new WaitForEndOfFrame();
         }

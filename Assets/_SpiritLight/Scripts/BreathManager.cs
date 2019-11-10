@@ -4,9 +4,39 @@ using UnityEngine;
 
 public class BreathManager : MonoBehaviour {
     public static BreathManager Breath;
+
+
     [SerializeField] float breathLimit = 10.0f;
 
-    [SerializeField] float breathMeter;
+    public float BreathLimit
+    {
+        get
+        {
+            return breathLimit;
+        }
+    }
+
+    [SerializeField] [ReadOnlyField] float breathMeter;
+
+    public float BreathMeter
+    {
+        get
+        {
+            return breathMeter;
+        }
+    }
+
+
+    [SerializeField] [Range(0.0f, 1.0f)]
+    private float gaspingThreshold = 0.2f;
+
+    public float GaspingThreshold
+    {
+        get
+        {
+            return gaspingThreshold;
+        }
+    }
 
     [SerializeField] float breathBlowCost = 2.0f;
 
