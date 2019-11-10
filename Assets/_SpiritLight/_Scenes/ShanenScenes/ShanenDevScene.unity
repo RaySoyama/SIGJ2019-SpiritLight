@@ -8828,6 +8828,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1812090170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1202648427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4179644370632054801, guid: ae2ea3f84923934439ffcd278ed1c3b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1142225563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1210766453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11686,6 +11692,7 @@ MonoBehaviour:
   TarCandles:
   - {fileID: 1146151391}
   - {fileID: 946747852}
+  tarObject: {fileID: 1202648427}
 --- !u!1 &1662463429
 GameObject:
   m_ObjectHideFlags: 0
