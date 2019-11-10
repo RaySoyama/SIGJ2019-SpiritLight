@@ -67,7 +67,7 @@ public class BreathManager : MonoBehaviour {
     }
 
     public void Blow() {
-        Debug.Log("Blow");
         breathMeter = Mathf.Clamp(breathMeter - breathBlowCost, 0, breathLimit);
+        AudioManager.Audio.BlowAir();
     }
 }

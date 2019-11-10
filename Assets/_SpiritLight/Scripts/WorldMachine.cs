@@ -52,6 +52,7 @@ public class WorldMachine : MonoBehaviour
     private GameObject husk;
 
 
+    [Header("Cam")]
     [SerializeField]
     private CinemachineVirtualCamera RealityCam;
 
@@ -94,6 +95,12 @@ public class WorldMachine : MonoBehaviour
     public GameObject triggerTwo;
     public bool triggerTwoTriggered = false;
     public AudioSource triggerTwoAS;
+
+    [Space(10)]
+    public GameObject triggerThree;
+    public bool triggerThreeTriggered = false;
+    
+
 
     void Awake()
     {
@@ -182,10 +189,10 @@ public class WorldMachine : MonoBehaviour
             //Do Spooky shit
             Debug.Log("Spook 1");
             triggerOneAnim.SetTrigger("spook");
+            AudioManager.Audio.CricketAmbient.Pause();
 
         }
-
-        if (trigger == triggerTwo && triggerTwoTriggered == false)
+        else if (trigger == triggerTwo && triggerTwoTriggered == false)
         {
             triggerTwoTriggered = true;
             //Do Spooky shit

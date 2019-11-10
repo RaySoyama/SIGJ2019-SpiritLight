@@ -17,16 +17,18 @@ public class CandleManager : MonoBehaviour
         }
     }
 
-    public void BlowCandle(Candle candle)
+    public void BlowCandle(Candle thingy)
     {
         foreach (Candle cand in TarCandles)
         {
-            /*
-            if (cand.id == candle.id)
+            
+            if (cand.id == thingy.id)
             {
+                thingy.flame.SetActive(false);
                 TarCandles.Remove(cand);
+                break;
             }
-            */
+            
         }
 
 

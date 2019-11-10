@@ -32,6 +32,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> PlayerSFXClips;
 
+
+    public AudioSource CricketAmbient;
+
+    public AudioSource RealmAmbient;
+
     [Header("Realm SFX")]
 
     [SerializeField]
@@ -39,6 +44,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> RealmEnterExitClips;
+
+
 
 
     private BreathManager breath;
@@ -144,7 +151,23 @@ public class AudioManager : MonoBehaviour
     }
 
 
+
+
     //Player SFX system
+
+    public void BlowAir()
+    {
+        foreach (AudioSource audio in PlayerSFXAudioSource)
+        {
+            audio.clip = PlayerSFXClips[1];
+            audio.Play();
+        }
+
+    }
+
+
+
+
 
     public void PlayRealmEnter()
     {
