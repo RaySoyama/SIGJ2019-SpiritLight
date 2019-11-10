@@ -38,10 +38,8 @@ public class HeadBob : MonoBehaviour {
                 footstepIsPlaying = false;
             }
 
-            // Debug.Log("waveslice: " + waveslice.ToString("F20"));
             if (!footstepIsPlaying && waveslice <= -0.99f) {
                 AudioManager.Audio.PlayFootstep();
-                Debug.Log("Footstep!");
                 footstepIsPlaying = true;
             }
 
