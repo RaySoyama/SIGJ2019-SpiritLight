@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RealmCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 8430213388604832381, guid: bd4dfa586dbb7f34c84b698d78425606,
+        type: 3}
+      propertyPath: m_TagString
+      value: RealmCharacter
+      objectReference: {fileID: 0}
     - target: {fileID: 8430213388604832379, guid: bd4dfa586dbb7f34c84b698d78425606,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +71,15 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 888874049, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
+      propertyPath: m_TagString
+      value: RealmCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 567400223250699712, guid: bd4dfa586dbb7f34c84b698d78425606,
+        type: 3}
+      propertyPath: m_TagString
+      value: RealmCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 888874050, guid: bd4dfa586dbb7f34c84b698d78425606, type: 3}
       propertyPath: m_Priority

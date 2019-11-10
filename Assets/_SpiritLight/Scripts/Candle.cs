@@ -4,5 +4,19 @@ using UnityEngine;
 
 public class Candle : MonoBehaviour
 {
-    public bool isLit = true;
+    [SerializeField] bool isLit = true;
+
+    public void Extinguish() {
+        if (isLit) {
+            Debug.Log("Extinguished!");
+        }
+        else {
+            Debug.Log("Already extinguished.");
+        }
+        isLit = false;
+    }
+
+    public void Light() {
+        isLit = true;
+    }
 }
