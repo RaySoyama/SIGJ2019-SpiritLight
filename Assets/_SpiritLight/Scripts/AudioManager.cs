@@ -129,7 +129,7 @@ public class AudioManager : MonoBehaviour
 
     //Player SFX system
 
-    public void PlayRealEnter()
+    public void PlayRealmEnter()
     {
         //RealmAudioSource.clip = RealmEnterExitClips[0];
         //RealmAudioSource.Play();
