@@ -7,6 +7,8 @@ public class CandleManager : MonoBehaviour
     [SerializeField]
     private List<Candle> TarCandles;
 
+    [SerializeField] GameObject tarObject;
+
     public static CandleManager CandleMan;
 
     void Start()
@@ -35,7 +37,13 @@ public class CandleManager : MonoBehaviour
         if (TarCandles.Count == 0)
         { 
             //Unlock Tar Area
-            
+            if (tarObject) {
+                Collider collider = tarObject.GetComponentInChildren<BoxCollider>();
+                Debug.Log("Tar area unlocked");
+                if (collider) {
+                    collider.enabled = false;
+                }
+            }
             
 
         }   
