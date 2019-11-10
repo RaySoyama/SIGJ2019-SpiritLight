@@ -19249,6 +19249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 1
+  id: 1
+  flame: {fileID: 6444125695095424945}
 --- !u!1001 &2102231209926652636
 PrefabInstance:
   m_ObjectHideFlags: 0
