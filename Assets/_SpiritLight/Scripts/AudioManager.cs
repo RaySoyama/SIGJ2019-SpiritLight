@@ -146,7 +146,7 @@ public class AudioManager : MonoBehaviour
 
     //Player SFX system
 
-    public void PlayRealEnter()
+    public void PlayRealmEnter()
     {
         foreach (AudioSource audio in RealmAudioSource)
         {
