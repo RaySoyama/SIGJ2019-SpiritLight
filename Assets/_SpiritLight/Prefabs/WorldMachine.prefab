@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5962362566636469973
+--- !u!1 &1288545594567597981
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5962362566636469962}
-  - component: {fileID: 5962362566636469963}
-  - component: {fileID: 5962362566636469960}
-  - component: {fileID: 5962362566636469961}
+  - component: {fileID: 1288545594567597954}
+  - component: {fileID: 1288545594567597955}
+  - component: {fileID: 1288545594567597952}
+  - component: {fileID: 1288545594567597953}
   m_Layer: 0
   m_Name: WorldMachine
   m_TagString: Untagged
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5962362566636469962
+--- !u!4 &1288545594567597954
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962362566636469973}
+  m_GameObject: {fileID: 1288545594567597981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5962362566636469963
+--- !u!114 &1288545594567597955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962362566636469973}
+  m_GameObject: {fileID: 1288545594567597981}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163fe2a86a5cfd2468b73a7247e9303b, type: 3}
@@ -56,19 +56,25 @@ MonoBehaviour:
   RealityCam: {fileID: 0}
   RealmCam: {fileID: 0}
   mainCamera: {fileID: 0}
---- !u!114 &5962362566636469960
+  triggerOne: {fileID: 0}
+  triggerOneTriggered: 0
+  triggerOneAnim: {fileID: 0}
+  triggerTwo: {fileID: 0}
+  triggerTwoTriggered: 0
+  triggerTwoAS: {fileID: 0}
+--- !u!114 &1288545594567597952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962362566636469973}
+  m_GameObject: {fileID: 1288545594567597981}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a07d7efc4c4b9a044a394086ded0f393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FootstepPitchRange: {x: 0, y: 0}
+  FootstepPitchRange: {x: 0.8, y: 1.2}
   FootStepAudioSource:
   - {fileID: 0}
   - {fileID: 0}
@@ -79,19 +85,29 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 590f15284f07f7842a7db927c9b1b2db, type: 3}
   - {fileID: 8300000, guid: a5ae3e861a322c14486a650c8cf4cad5, type: 3}
   - {fileID: 8300000, guid: aaac41fe8bc049048b2379e870a8a06f, type: 3}
-  FootstepGrassClips: []
+  FootstepGrassClips:
+  - {fileID: 8300000, guid: 071e1523384b2d9428588f4d31a73352, type: 3}
+  - {fileID: 8300000, guid: 44245a9526da50d4096301db14f7f03a, type: 3}
+  - {fileID: 8300000, guid: fe6a8b98609d32646a884fa01cf87590, type: 3}
+  - {fileID: 8300000, guid: b90cb6137b8e9e949bc5bee860685e90, type: 3}
+  - {fileID: 8300000, guid: 55e1fdb46845acd4b90daf4b2c518887, type: 3}
   FootstepRockClips: []
   PlayerSFXAudioSource: []
   PlayerSFXClips: []
-  RealmAudioSource: []
-  RealmEnterExitClips: []
---- !u!114 &5962362566636469961
+  RealmAudioSource:
+  - {fileID: 0}
+  - {fileID: 0}
+  RealmEnterExitClips:
+  - {fileID: 8300000, guid: 0102f239dc3fb244596400a84df7480a, type: 3}
+  - {fileID: 8300000, guid: 17991daa921ebd8429b9aaaae89c6e23, type: 3}
+  - {fileID: 8300000, guid: 139f0bd3d5f927b4397ee048a49a7986, type: 3}
+--- !u!114 &1288545594567597953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962362566636469973}
+  m_GameObject: {fileID: 1288545594567597981}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1134f3e238b59bb47aef8d19286d4cb0, type: 3}
@@ -99,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breathLimit: 10
   breathMeter: 0
+  gaspingThreshold: 0.2
   breathBlowCost: 2
   breathDepletionRate: 1
   breathRecoveryRate: 1
