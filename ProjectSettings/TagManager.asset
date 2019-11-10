@@ -8,6 +8,7 @@ TagManager:
   - RealityCharacter
   - RealmCharacter
   - EventTrigger
+  - Tar
   layers:
   - Default
   - TransparentFX

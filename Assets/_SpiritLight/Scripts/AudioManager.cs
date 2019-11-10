@@ -177,5 +177,12 @@ public class AudioManager : MonoBehaviour
 
         }
     }
+
+    public void PlayDeath() {
+        foreach (AudioSource audio in RealmAudioSource) {
+            audio.clip = PlayerSFXClips[0];
+            audio.Play();
+        }
+    }
 }
 

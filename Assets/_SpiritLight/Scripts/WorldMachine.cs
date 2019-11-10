@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 public class WorldMachine : MonoBehaviour
 {
@@ -191,9 +192,29 @@ public class WorldMachine : MonoBehaviour
             Debug.Log("Spook 2");
             triggerTwoAS.Play();
         }
+    }
 
+    public void OnTarTrigger(GameObject trigger) {
+        // Do something
+        Debug.Log("Tar'd");
+        AudioManager.Audio.PlayDeath();
+        Controller controller = realityPlayer.GetComponent<Controller>();
+        HeadBob headBob = realityPlayer.GetComponent<HeadBob>();
 
+        if (controller) {
+            controller.canMove = false;
+        }
 
+        if (headBob) {
+            headBob.enabled = false;
+        }
+        
+        StartCoroutine(RestartLevel());
+    }
+
+    private IEnumerator RestartLevel() {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
