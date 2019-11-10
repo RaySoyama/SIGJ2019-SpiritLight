@@ -108,6 +108,8 @@ public class WorldMachine : MonoBehaviour
         RealmCam.Priority = 20;
         RealityCam.Priority = 10;
 
+        AudioManager.Audio.PlayRealEnter();
+
         huskLocation = realmPlayer.transform.position;
         husk.transform.position = huskLocation;
     }
