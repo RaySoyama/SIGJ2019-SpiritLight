@@ -7,7 +7,7 @@ public class CandleManager : MonoBehaviour
     [SerializeField]
     private List<Candle> TarCandles;
 
-    [SerializeField] GameObject tarObject;
+    [SerializeField] List<GameObject> tarObjects;
 
     public static CandleManager CandleMan;
 
@@ -35,14 +35,17 @@ public class CandleManager : MonoBehaviour
         }
 
         if (TarCandles.Count == 0)
-        { 
+        {
             //Unlock Tar Area
-            if (tarObject) {
-                Collider collider = tarObject.GetComponentInChildren<BoxCollider>();
+            foreach (GameObject toor in tarObjects)
+            {
+                Collider collider = toor.GetComponentInChildren<BoxCollider>();
                 Debug.Log("Tar area unlocked");
-                if (collider) {
+                if (collider)
+                {
                     collider.enabled = false;
                 }
+
             }
             
 
