@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Cinemachine;
 public class WorldMachine : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class WorldMachine : MonoBehaviour
 
     [SerializeField]
     private GameObject husk;
+
+    [SerializeField] Image fadeScreen;
 
 
     [Header("Cam")]
@@ -203,9 +206,10 @@ public class WorldMachine : MonoBehaviour
     }
 
     public void OnTarTrigger(GameObject trigger) {
-        // Do something
         Debug.Log("Tar'd");
         AudioManager.Audio.PlayDeath();
+
+        // Freeze Player
         Controller controller = realityPlayer.GetComponent<Controller>();
         HeadBob headBob = realityPlayer.GetComponent<HeadBob>();
 
@@ -216,18 +220,44 @@ public class WorldMachine : MonoBehaviour
         if (headBob) {
             headBob.enabled = false;
         }
-        
-        StartCoroutine(RestartLevel());
+
+        StartCoroutine(Die());
     }
 
-    private IEnumerator RestartLevel() {
-        yield return new WaitForSeconds(2);
+    private IEnumerator Die() {
+        yield return StartCoroutine(FadeOut());
+        yield return StartCoroutine(Restart());
+    }
+
+    private IEnumerator FadeOut() {
+        float fadeOutTime = 2f;
+        float currentTime = 0f;
+
+        if (fadeScreen == null) {
+            yield return new WaitForSeconds(fadeOutTime);
+            yield break;
+        }
+
+        Color startColor = fadeScreen.color;
+        Color endColor = startColor;
+        endColor.a = 1;
+        Color currentColor = startColor;
+        while (currentTime < fadeOutTime) {
+            currentTime += Time.deltaTime;
+            currentColor = Color.Lerp(startColor, endColor, currentTime/fadeOutTime);
+            fadeScreen.color = currentColor;
+            yield return null;
+        }
+    }
+
+    private IEnumerator Restart() {
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private IEnumerator CicadaPause()
     {
         yield return new WaitForSeconds(2);
         AudioManager.Audio.CricketAmbient.Play();
-
     }
+
 }
