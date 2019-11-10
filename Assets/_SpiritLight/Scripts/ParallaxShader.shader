@@ -64,7 +64,7 @@
 				float xDot = dot(viewDir.yz	, normal.xz) * _Offset;
 				float yDot = dot(viewDir.yz	, normal.zx) * _Offset;
 
-                fixed4 col = tex2D(_MainTex, float2(i.uv.x + yDot, i.uv.y + xDot));
+                fixed4 col = tex2D(_MainTex, float2(i.uv.x + yDot,	i.uv.y + xDot));
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
             }

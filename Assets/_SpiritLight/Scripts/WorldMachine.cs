@@ -91,7 +91,7 @@ public class WorldMachine : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            OnEnterRealm();
+            OnEnterRealmStart();
         }
 
         if (Input.GetKeyDown(KeyCode.M))
@@ -102,7 +102,7 @@ public class WorldMachine : MonoBehaviour
         realmPlayer.transform.position = realityPlayer.transform.position + realmOffset;
     }
 
-    public void OnEnterRealm()
+    public void OnEnterRealmStart()
     {
         isInRealm = true;
         RealmCam.Priority = 20;
@@ -113,6 +113,16 @@ public class WorldMachine : MonoBehaviour
         huskLocation = realmPlayer.transform.position;
         husk.transform.position = huskLocation;
     }
+
+    public void OnEnterRealmEntry()
+    {
+        isInRealm = true;
+        RealmCam.Priority = 20;
+        RealityCam.Priority = 10;
+        huskLocation = realmPlayer.transform.position;
+        husk.transform.position = huskLocation;
+    }
+
 
     public void OnExitRealm()
     {
