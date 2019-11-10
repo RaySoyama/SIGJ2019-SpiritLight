@@ -13,7 +13,14 @@ public class CandleDetection : MonoBehaviour {
         candleMask = LayerMask.GetMask("Candle");
     }
     void Update() {
+        // If this is not the player currently being controlled, do nothing
+        if (WorldMachine.World.CurrentCameraTransform.tag != transform.tag) {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0)) {
+            BreathManager.Breath.Blow();
+
             RaycastHit hit;
             bool didHit = Physics.Raycast(transform.position, transform.forward, out hit, candleHitRange, candleMask);
             if (drawRaycast) {
@@ -23,9 +30,7 @@ public class CandleDetection : MonoBehaviour {
                 Candle candle = hit.collider.GetComponent<Candle>();
 
                 if (candle != null) {
-                    if (WorldMachine.World.CurrentCameraTransform.tag == transform.tag) {
-                        candle.Extinguish();
-                    }
+                    candle.Extinguish();
                 }
             }
         }
