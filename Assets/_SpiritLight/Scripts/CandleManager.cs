@@ -19,18 +19,18 @@ public class CandleManager : MonoBehaviour
 
     public void BlowCandle(Candle thingy)
     {
-        foreach (Candle cand in TarCandles)
-        {
-            
-            if (cand.id == thingy.id)
-            {
-                thingy.flame.SetActive(false);
-                TarCandles.Remove(cand);
-                break;
-            }
-            
-        }
 
+
+        for (int i = 0; i < TarCandles.Count; i++)
+        {
+            if (TarCandles[i].id == thingy.id)
+            {
+                thingy.isLit = false;
+                thingy.flame.SetActive(false);
+                TarCandles.Remove(TarCandles[i]);
+                i--;
+            }
+        }
 
         if (TarCandles.Count == 0)
         { 
