@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5962362566636469973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5962362566636469962}
+  - component: {fileID: 5962362566636469963}
+  - component: {fileID: 5962362566636469960}
+  - component: {fileID: 5962362566636469961}
+  m_Layer: 0
+  m_Name: WorldMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5962362566636469962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962362566636469973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5962362566636469963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962362566636469973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163fe2a86a5cfd2468b73a7247e9303b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realityPlayer: {fileID: 0}
+  realmPlayer: {fileID: 0}
+  CurrentGameState: 0
+  CurrentWalkingSurface: 0
+  isInRealm: 0
+  realmOffset: {x: 0, y: 50, z: 0}
+  huskLocation: {x: 0, y: 0, z: 0}
+  husk: {fileID: 0}
+  RealityCam: {fileID: 0}
+  RealmCam: {fileID: 0}
+  mainCamera: {fileID: 0}
+--- !u!114 &5962362566636469960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962362566636469973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07d7efc4c4b9a044a394086ded0f393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FootstepPitchRange: {x: 0, y: 0}
+  FootStepAudioSource:
+  - {fileID: 0}
+  - {fileID: 0}
+  FootstepWoodClips:
+  - {fileID: 8300000, guid: e3fe89a3523c2274388dd119ede41a6f, type: 3}
+  - {fileID: 8300000, guid: bc5c8a6641c68244b9b7a70506993d94, type: 3}
+  - {fileID: 8300000, guid: 8265ab3d1a1f66946ba6731e9f1b891e, type: 3}
+  - {fileID: 8300000, guid: 590f15284f07f7842a7db927c9b1b2db, type: 3}
+  - {fileID: 8300000, guid: a5ae3e861a322c14486a650c8cf4cad5, type: 3}
+  - {fileID: 8300000, guid: aaac41fe8bc049048b2379e870a8a06f, type: 3}
+  FootstepGrassClips: []
+  FootstepRockClips: []
+  PlayerSFXAudioSource: []
+  PlayerSFXClips: []
+  RealmAudioSource: []
+  RealmEnterExitClips: []
+--- !u!114 &5962362566636469961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962362566636469973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1134f3e238b59bb47aef8d19286d4cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breathLimit: 10
+  breathMeter: 0
+  breathBlowCost: 2
+  breathDepletionRate: 1
+  breathRecoveryRate: 1
