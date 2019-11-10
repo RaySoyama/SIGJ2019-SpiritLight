@@ -11183,6 +11183,7 @@ GameObject:
   - component: {fileID: 1645085776}
   - component: {fileID: 1645085777}
   - component: {fileID: 1645085778}
+  - component: {fileID: 1645085779}
   m_Layer: 0
   m_Name: WorldMachine
   m_TagString: Untagged
@@ -11255,6 +11256,23 @@ MonoBehaviour:
   PlayerSFXClips: []
   RealmAudioSource: []
   RealmEnterExitClips: []
+--- !u!114 &1645085779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645085775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1134f3e238b59bb47aef8d19286d4cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breathLimit: 10
+  breathMeter: 0
+  breathBlowCost: 2
+  breathDepletionRate: 1
+  breathRecoveryRate: 1
 --- !u!1 &1662463429
 GameObject:
   m_ObjectHideFlags: 0
