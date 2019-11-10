@@ -7,6 +7,12 @@ public class Candle : MonoBehaviour
     [SerializeField] bool isLit = true;
 
     public void Extinguish() {
+        if (isLit) {
+            Debug.Log("Extinguished!");
+        }
+        else {
+            Debug.Log("Already extinguished.");
+        }
         isLit = false;
     }
 

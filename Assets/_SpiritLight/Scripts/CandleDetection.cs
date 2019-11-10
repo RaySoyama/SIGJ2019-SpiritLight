@@ -23,7 +23,9 @@ public class CandleDetection : MonoBehaviour {
                 Candle candle = hit.collider.GetComponent<Candle>();
 
                 if (candle != null) {
-                    candle.Extinguish();
+                    if (WorldMachine.World.CurrentCameraTransform.tag == transform.tag) {
+                        candle.Extinguish();
+                    }
                 }
             }
         }
