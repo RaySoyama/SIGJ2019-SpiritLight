@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour
 
     [Header("Foot Steps")]
     [SerializeField]
+    private Vector2 FootstepPitchRange;
+
+    [SerializeField]
     private List<AudioSource> FootStepAudioSource;
 
     [SerializeField]
@@ -17,7 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> FootstepRockClips;
 
-    private int PreviousFootstep;
+    private int PreviousFootstepOne;
+    private int PreviousFootstepTwo;
 
 
     [Header("SFX")]
@@ -59,11 +63,16 @@ public class AudioManager : MonoBehaviour
     {
         int idx = -1;
 
+        foreach (AudioSource audio in FootStepAudioSource)
+        {
+            audio.pitch = Random.Range(FootstepPitchRange.x, FootstepPitchRange.y);
+        }
+
         switch (WorldMachine.World.CurrentWalkingSurface)
         {
             case WorldMachine.PlayerWalkingSurface.Wood:
 
-                while (idx == PreviousFootstep || idx == -1)
+                while (idx == PreviousFootstepOne || idx == PreviousFootstepTwo || idx == -1)
                 {
                     idx = Random.Range(0, FootstepWoodClips.Count - 1);
 
@@ -73,7 +82,8 @@ public class AudioManager : MonoBehaviour
                     }
                 }
 
-                PreviousFootstep = idx;
+                PreviousFootstepTwo = PreviousFootstepOne;
+                PreviousFootstepOne = idx;
 
                 foreach (AudioSource audio in FootStepAudioSource)
                 { 
@@ -85,7 +95,7 @@ public class AudioManager : MonoBehaviour
 
             case WorldMachine.PlayerWalkingSurface.Grass:
 
-                while (idx == PreviousFootstep || idx == -1)
+                while (idx == PreviousFootstepOne || idx == PreviousFootstepTwo || idx == -1)
                 {
                     idx = Random.Range(0, FootstepGrassClips.Count - 1);
 
@@ -95,7 +105,8 @@ public class AudioManager : MonoBehaviour
                     }
                 }
 
-                PreviousFootstep = idx;
+                PreviousFootstepTwo = PreviousFootstepOne;
+                PreviousFootstepOne = idx;
 
                 foreach (AudioSource audio in FootStepAudioSource)
                 {
@@ -105,7 +116,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case WorldMachine.PlayerWalkingSurface.Rock:
 
-                while (idx == PreviousFootstep || idx == -1)
+                while (idx == PreviousFootstepOne || idx == PreviousFootstepTwo || idx == -1)
                 {
                     idx = Random.Range(0, FootstepRockClips.Count - 1);
 
@@ -115,7 +126,8 @@ public class AudioManager : MonoBehaviour
                     }
                 }
 
-                PreviousFootstep = idx;
+                PreviousFootstepTwo = PreviousFootstepOne;
+                PreviousFootstepOne = idx;
 
                 foreach (AudioSource audio in FootStepAudioSource)
                 {
@@ -131,9 +143,17 @@ public class AudioManager : MonoBehaviour
 
     public void PlayRealEnter()
     {
-        //RealmAudioSource.clip = RealmEnterExitClips[0];
-        //RealmAudioSource.Play();
+        foreach (AudioSource audio in RealmAudioSource)
+        {
+
+//RealmAudioSource.clip = RealmEnterExitClips[0];
+            //RealmAudioSource.Play();
+        }
+
     }
+
+
+
 
     public void PlayRealmExit()
     {
