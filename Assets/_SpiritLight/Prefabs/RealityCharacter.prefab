@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 2636547396191893587}
   - component: {fileID: 6187471717945158162}
   - component: {fileID: 706411683}
+  - component: {fileID: 706411678}
   m_Layer: 0
   m_Name: RealityCharacter
   m_TagString: RealityCharacter
@@ -455,6 +456,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleHitRange: 2
   drawRaycast: 0
+--- !u!95 &706411678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430213388604832381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcf11462ddf15174198aa383c5fdd704, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8430213388434050249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RealityCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bfaf6cfc0cffa7a4298ca66bf1029324,
         type: 3}

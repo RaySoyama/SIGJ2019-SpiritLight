@@ -17,7 +17,7 @@ public class WorldMachine : MonoBehaviour
     }
 
     public enum PlayerWalkingSurface
-    { 
+    {
         Wood,
         Grass,
         Rock
@@ -43,7 +43,8 @@ public class WorldMachine : MonoBehaviour
     [SerializeField]
     private Vector3 realmOffset;
 
-    [SerializeField] [ReadOnlyField]
+    [SerializeField]
+    [ReadOnlyField]
     private Vector3 huskLocation;
 
     [SerializeField]
@@ -66,12 +67,16 @@ public class WorldMachine : MonoBehaviour
         }
     }
 
-    public Transform CurrentCameraTransform {
-        get {
-            if (isInRealm) {
+    public Transform CurrentCameraTransform
+    {
+        get
+        {
+            if (isInRealm)
+            {
                 return RealmCam.transform;
             }
-            else {
+            else
+            {
                 return RealityCam.transform;
             }
         }
@@ -83,7 +88,7 @@ public class WorldMachine : MonoBehaviour
         {
             World = this;
         }
-        
+
     }
 
     void LateUpdate()
@@ -104,14 +109,12 @@ public class WorldMachine : MonoBehaviour
 
     public void OnEnterRealmStart()
     {
-        isInRealm = true;
-        RealmCam.Priority = 20;
-        RealityCam.Priority = 10;
-
         AudioManager.Audio.PlayRealmEnter();
+        realityPlayer.GetComponent<Animator>().SetTrigger("enterRealm");
+        realmPlayer.GetComponent<Animator>().SetTrigger("enterRealm");
 
-        huskLocation = realmPlayer.transform.position;
-        husk.transform.position = huskLocation;
+
+        StartCoroutine(EnterRealm());
     }
 
     public void OnEnterRealmEntry()
@@ -128,9 +131,11 @@ public class WorldMachine : MonoBehaviour
     {
         StartCoroutine(ExitRealm());
     }
-    public void OnEnter()
-    { 
 
+    private IEnumerator EnterRealm()
+    {
+        yield return new WaitForSeconds(1.16f);
+        OnEnterRealmEntry();
     }
 
     private IEnumerator ExitRealm()
