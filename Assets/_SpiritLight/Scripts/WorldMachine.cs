@@ -128,6 +128,11 @@ public class WorldMachine : MonoBehaviour
             OnExitRealm();
         }
 
+        // Fade out debug
+        if (Input.GetKeyDown(KeyCode.G)) {
+            StartCoroutine(FadeOut());
+        }
+
         realmPlayer.transform.position = realityPlayer.transform.position + realmOffset;
     }
 
