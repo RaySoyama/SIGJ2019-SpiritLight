@@ -132,10 +132,14 @@ public class WorldMachine : MonoBehaviour
         {
             CurrentWalkingSurface = PlayerWalkingSurface.Grass; 
         }
-        
+
         if (Input.GetKeyDown(KeyCode.K))
         {
-            CurrentWalkingSurface = PlayerWalkingSurface.Wood; 
+            CurrentWalkingSurface = PlayerWalkingSurface.Wood;
+        }
+        // Fade out debug
+        if (Input.GetKeyDown(KeyCode.G)) {
+            StartCoroutine(FadeOut());
         }
 
         realmPlayer.transform.position = realityPlayer.transform.position + realmOffset;
