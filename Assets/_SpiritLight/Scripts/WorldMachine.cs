@@ -102,7 +102,8 @@ public class WorldMachine : MonoBehaviour
     [Space(10)]
     public GameObject triggerThree;
     public bool triggerThreeTriggered = false;
-    
+    public Animator triggerThreeAnim;
+
 
 
     void Awake()
@@ -202,6 +203,7 @@ public class WorldMachine : MonoBehaviour
             triggerOneTriggered = true;
             //Do Spooky shit
             Debug.Log("Spook 1");
+            triggerOneAnim.gameObject.SetActive(true);
             triggerOneAnim.SetTrigger("spook");
             AudioManager.Audio.CicadaAmbient.Pause();
             StartCoroutine(CicadaPause());
@@ -213,6 +215,13 @@ public class WorldMachine : MonoBehaviour
             //Do Spooky shit
             Debug.Log("Spook 2");
             triggerTwoAS.Play();
+        }
+        else if (trigger == triggerThree && triggerThreeTriggered == false)
+        {
+            triggerThreeTriggered = true;
+            Debug.Log("Spook e");
+            triggerThreeAnim.gameObject.SetActive(true);
+            triggerThreeAnim.SetTrigger("spook");
         }
     }
 
