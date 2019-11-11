@@ -22,6 +22,8 @@ public class TitleManager : MonoBehaviour
         if (Title == null) {
             Title = this;
         }
+
+        Cursor.visible = false;
     }
 
     void Update() {
