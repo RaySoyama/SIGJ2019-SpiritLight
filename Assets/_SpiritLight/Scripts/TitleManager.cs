@@ -10,7 +10,13 @@ public class TitleManager : MonoBehaviour
     [SerializeField] string levelName;
     [SerializeField] Image fadeScreen;
 
+    [SerializeField] GameObject lights;
+
     [SerializeField] Candle candle;
+
+    [SerializeField] AudioSource sfxSource;
+
+    [SerializeField] AudioSource musicSource;
 
     void Awake() {
         if (Title == null) {
@@ -34,7 +40,9 @@ public class TitleManager : MonoBehaviour
 
     IEnumerator DoBreath() {
         candle.flame.SetActive(false);
-        yield break;
+        // lights.SetActive(false);
+        sfxSource.Play();
+        yield return null;
     }
 
     IEnumerator FadeOut() {
