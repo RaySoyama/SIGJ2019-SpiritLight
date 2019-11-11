@@ -128,6 +128,16 @@ public class WorldMachine : MonoBehaviour
             OnExitRealm();
         }
 
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            CurrentWalkingSurface = PlayerWalkingSurface.Grass; 
+        }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            CurrentWalkingSurface = PlayerWalkingSurface.Wood; 
+        }
+
         realmPlayer.transform.position = realityPlayer.transform.position + realmOffset;
     }
 
@@ -221,7 +231,7 @@ public class WorldMachine : MonoBehaviour
             triggerThreeTriggered = true;
             Debug.Log("Spook e");
             triggerThreeAnim.gameObject.SetActive(true);
-            triggerThreeAnim.SetTrigger("spook");
+            triggerThreeAnim.SetTrigger("spook");   
         }
     }
 
