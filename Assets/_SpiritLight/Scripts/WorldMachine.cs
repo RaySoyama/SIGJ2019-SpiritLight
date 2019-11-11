@@ -102,7 +102,8 @@ public class WorldMachine : MonoBehaviour
     [Space(10)]
     public GameObject triggerThree;
     public bool triggerThreeTriggered = false;
-    
+    public Animator triggerThreeAnim;
+
 
 
     void Awake()
@@ -135,13 +136,20 @@ public class WorldMachine : MonoBehaviour
         AudioManager.Audio.PlayRealmEnter();
         realityPlayer.GetComponent<Animator>().SetTrigger("enterRealm");
         realmPlayer.GetComponent<Animator>().SetTrigger("enterRealm");
-
+        realityPlayer.GetComponent<Controller>().StopMovement();
 
         StartCoroutine(EnterRealm());
     }
 
     public void OnEnterRealmEntry()
     {
+        realityPlayer.GetComponent<Controller>().StartMovement();
+
+        AudioManager.Audio.RealityAmbient.Pause();
+        AudioManager.Audio.CicadaAmbient.Pause();
+        AudioManager.Audio.RealmAmbient.Play();
+
+
         isInRealm = true;
         RealmCam.Priority = 20;
         RealityCam.Priority = 10;
@@ -179,6 +187,10 @@ public class WorldMachine : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        AudioManager.Audio.RealityAmbient.Play();
+        AudioManager.Audio.CicadaAmbient.Play();
+        AudioManager.Audio.RealmAmbient.Stop();
+
         RealityCam.m_Lens.FieldOfView = 40;
     }
 
@@ -191,8 +203,9 @@ public class WorldMachine : MonoBehaviour
             triggerOneTriggered = true;
             //Do Spooky shit
             Debug.Log("Spook 1");
+            triggerOneAnim.gameObject.SetActive(true);
             triggerOneAnim.SetTrigger("spook");
-            AudioManager.Audio.CricketAmbient.Pause();
+            AudioManager.Audio.CicadaAmbient.Pause();
             StartCoroutine(CicadaPause());
 
         }
@@ -202,6 +215,13 @@ public class WorldMachine : MonoBehaviour
             //Do Spooky shit
             Debug.Log("Spook 2");
             triggerTwoAS.Play();
+        }
+        else if (trigger == triggerThree && triggerThreeTriggered == false)
+        {
+            triggerThreeTriggered = true;
+            Debug.Log("Spook e");
+            triggerThreeAnim.gameObject.SetActive(true);
+            triggerThreeAnim.SetTrigger("spook");
         }
     }
 
@@ -253,7 +273,7 @@ public class WorldMachine : MonoBehaviour
     private IEnumerator CicadaPause()
     {
         yield return new WaitForSeconds(2);
-        AudioManager.Audio.CricketAmbient.Play();
+        AudioManager.Audio.CicadaAmbient.Play();
     }
 
 }
